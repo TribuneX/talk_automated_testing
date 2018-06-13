@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    <script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .login-form {
+            width: 340px;
+            margin: 50px auto;
+        }
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+        .btn {
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="login-form">
+    <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+        <h2 class="text-center">Register</h2>
+        <div class="form-group" >
+            <input type="text" th:field="*{username}" class="form-control" placeholder="username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" th:field="*{password}"  class="form-control" placeholder="password" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" th:field="*{retypedPassword}"  class="form-control" placeholder="re-enter password" required="required">
+        </div>
+        <div class="alert alert-primary">
+            <ul class="list-group">
+                <li class="list-group-item active">The password must have at least</li>
+                <li class="list-group-item">8 characters</li>
+                <li class="list-group-item">one upper case character</li>
+                <li class="list-group-item">one lower case character</li>
+                <li class="list-group-item">one number</li>
+            </ul>
+        </div><div class="alert alert-danger" th:if="${message != ''}">
+            <p th:text="${message}" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
