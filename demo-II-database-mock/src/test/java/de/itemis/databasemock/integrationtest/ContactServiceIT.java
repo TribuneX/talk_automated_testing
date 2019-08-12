@@ -15,6 +15,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @ExtendWith(SpringExtension.class)
 public class ContactServiceIT extends AbstractDbTest {
 
+    // Spring will boot an in-memory database behind the scenes
     @Autowired
     ContactRepository repository;
 
@@ -22,7 +23,7 @@ public class ContactServiceIT extends AbstractDbTest {
     ContactService contactService;
 
     @Test
-    void canLoadFullName() {
+    void shouldGetFullNameFromStoredContact() {
         Long id = saveTestContact(repository, "Peter", "Meyer").getId();
 
         String fullName = contactService.getFullName(id);

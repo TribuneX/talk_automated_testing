@@ -6,12 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContactService {
 
-    private ContactRepository repository;
-
     @Autowired
-    public ContactService(ContactRepository repository) {
-        this.repository = repository;
-    }
+    private ContactRepository repository;
 
     public String getFullName(Long id) {
         Contact contact = repository.findById(id).get();
