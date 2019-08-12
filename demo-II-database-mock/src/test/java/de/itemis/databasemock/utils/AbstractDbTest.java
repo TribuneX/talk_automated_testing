@@ -1,8 +1,8 @@
 package de.itemis.databasemock.utils;
 
+import de.itemis.databasemock.Contact;
 import de.itemis.databasemock.ContactRepository;
 import de.itemis.databasemock.ContactService;
-import de.itemis.databasemock.model.Contact;
 
 public abstract class AbstractDbTest {
 

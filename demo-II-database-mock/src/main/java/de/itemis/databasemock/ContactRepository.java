@@ -1,7 +1,8 @@
 package de.itemis.databasemock;
 
-import de.itemis.databasemock.model.Contact;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ContactRepository extends CrudRepository<Contact, String> {
+@Repository
+public interface ContactRepository extends CrudRepository<Contact, Long> {
 }

@@ -1,13 +1,25 @@
 package de.itemis.databasemock;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Data
+@Entity
+@NoArgsConstructor
 public class Contact {
 
     @Id
-    private String id;
-    private final String firstName;
-    private final String lastName;
+    @GeneratedValue
+    private Long id;
+    private String firstName;
+    private String lastName;
+
+    public Contact(final String firstName, final String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

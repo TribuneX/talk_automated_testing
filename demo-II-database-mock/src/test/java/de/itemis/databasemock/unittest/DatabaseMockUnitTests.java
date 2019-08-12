@@ -1,6 +1,5 @@
 package de.itemis.databasemock.unittest;
 
-
 import de.itemis.databasemock.ContactService;
 import de.itemis.databasemock.utils.AbstractDbTest;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +16,8 @@ public class DatabaseMockUnitTests extends AbstractDbTest {
     }
 
     @Test
-    public void canLoadFullName() {
-        String id = saveTestContact(repository, "Peter", "Meyer").getId();
+    public void shouldLoadFullName() {
+        Long id = saveTestContact(repository, "Peter", "Meyer").getId();
 
         String fullName = contactService.getFullName(id);
 
